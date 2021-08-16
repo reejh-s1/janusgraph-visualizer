@@ -1,3 +1,10 @@
+### What is the different in this fork comparing to origin repo
+
+1. Added suppport for different graph names
+2. Added GitHub actions to build & push Docker image
+3. Added productions mode to host in Kubernetes
+4. Added ability to override default values (graph host, port, name) via environement variables
+
 # Gremlin-Visualizer
 This project is to visualize the graph network corresponding to a gremlin query.
 

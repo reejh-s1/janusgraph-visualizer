@@ -1,10 +1,18 @@
-const SERVER_URL = 'http://localhost:3001';
+// Do not place other env vars here. Use settings endpoint in proxy-server.js to get them.
+// process.env is this file is evaluated at build time.
+// https://stackoverflow.com/a/46367006/6619628
+const SERVER_URL = process.env.NODE_ENV == 'production' ? '' : 'http://localhost:3001';
 export const QUERY_ENDPOINT = `${SERVER_URL}/query`;
+export const SETTINGS_ENDPOINT = `${SERVER_URL}/settings`;
 export const COMMON_GREMLIN_ERROR = 'Invalid query. Please execute a query to get a set of vertices';
+
 export const ACTIONS = {
+  SET_INITIALIZING: 'SET_INITIALIZING',
+  SET_LOADING: 'SET_LOADING',
   SET_HOST: 'SET_HOST',
   SET_PORT: 'SET_PORT',
   SET_QUERY: 'SET_QUERY',
+  SET_TRAVERSAL_SOURCE: 'TRAVERSAL_SOURCE',
   SET_ERROR: 'SET_ERROR',
   SET_NETWORK: 'SET_NETWORK',
   CLEAR_GRAPH: 'CLEAR_GRAPH',

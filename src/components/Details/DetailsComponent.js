@@ -60,7 +60,7 @@ class Details extends React.Component {
     const query = `g.V('${nodeId}').${direction}()`;
     axios.post(
       QUERY_ENDPOINT,
-      { host: this.props.host, port: this.props.port, query: query, nodeLimit: this.props.nodeLimit },
+      { host: this.props.host, port: this.props.port, query: query, nodeLimit: this.props.nodeLimit, traversalSource: this.props.traversalSource },
       { headers: { 'Content-Type': 'application/json' } }
     ).then((response) => {
       onFetchQuery(response, query, this.props.nodeLabels, this.props.dispatch);
@@ -276,6 +276,7 @@ export const DetailsComponent = connect((state)=>{
   return {
     host: state.gremlin.host,
     port: state.gremlin.port,
+    traversalSource: state.gremlin.traversalSource,
     network: state.graph.network,
     selectedNode: state.graph.selectedNode,
     selectedEdge: state.graph.selectedEdge,

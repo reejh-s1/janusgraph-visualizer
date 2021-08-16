@@ -45,7 +45,11 @@ export const findNodeById = (nodeList, id) => {
 export const stringifyObjectValues = (obj) => {
   _.forOwn(obj, (value, key) => {
     if (!_.isString(value)) {
-      obj[key] = JSON.stringify(value);
+      if (Array.isArray(value) && value.length === 1) {
+        obj[key] = JSON.stringify(value[0])
+      } else {
+        obj[key] = JSON.stringify(value);
+      }
     }
   });
 };

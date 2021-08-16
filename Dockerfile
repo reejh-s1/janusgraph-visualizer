@@ -1,15 +1,10 @@
-FROM node:10-alpine
+FROM node:20-alpine
 
-RUN npm cache clean --force && \
-	npm config set strict-ssl false && \
-	apk add wget unzip && \
-	wget --no-check-certificate https://github.com/prabushitha/gremlin-visualizer/archive/master.zip && \
-	unzip master.zip && \
-	cd gremlin-visualizer-master && \
-	npm install
+COPY build /app/frontend
+COPY build_proxy /app
 
-EXPOSE 3000 3001
+WORKDIR /app
 
-WORKDIR /gremlin-visualizer-master
+EXPOSE 3001
 
-CMD npm start
+CMD node index.js

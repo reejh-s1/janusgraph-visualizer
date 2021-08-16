@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import vis from 'vis-network';
+import { Network } from 'vis-network';
 import { ACTIONS } from '../../constants';
 
 class NetworkGraph extends React.Component{
@@ -9,7 +9,7 @@ class NetworkGraph extends React.Component{
       nodes: this.props.nodeHolder,
       edges: this.props.edgeHolder
     };
-    const network = new vis.Network(this.refs.myRef, data, this.props.networkOptions);
+    const network = new Network(this.refs.myRef, data, this.props.networkOptions);
 
     network.on('selectNode', (params) => {
       const nodeId = params.nodes && params.nodes.length > 0 ? params.nodes[0] : null;

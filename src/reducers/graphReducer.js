@@ -1,12 +1,12 @@
-import vis from 'vis-network';
+import { DataSet } from 'vis-data';
 import _ from 'lodash';
 import { ACTIONS } from '../constants';
 import { getDiffNodes, getDiffEdges, findNodeById } from '../logics/utils';
 
 const initialState = {
   network: null,
-  nodeHolder: new vis.DataSet([]),
-  edgeHolder: new vis.DataSet([]),
+  nodeHolder: new DataSet([]),
+  edgeHolder: new DataSet([]),
   nodes: [],
   edges: [],
   selectedNode: {},
