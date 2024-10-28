@@ -1,21 +1,22 @@
-### What is the different in this fork comparing to origin repo
+# Gremlin-Visualizer
+This project is to visualize the graph network corresponding to a gremlin query.
+Original gremlin-visualizer can be found [here](https://github.com/prabushitha/gremlin-visualizer).
+
+![alt text](https://raw.githubusercontent.com/prabushitha/Readme-Materials/master/Gremlin-Visualizer.png)
+
+### What is the different in this fork comparing to the origin repo
 
 1. Added suppport for different graph names
 2. Added GitHub actions to build & push Docker image
 3. Added productions mode to host in Kubernetes
 4. Added ability to override default values (graph host, port, name) via environement variables
 
-# Gremlin-Visualizer
-This project is to visualize the graph network corresponding to a gremlin query.
-
-![alt text](https://raw.githubusercontent.com/prabushitha/Readme-Materials/master/Gremlin-Visualizer.png)
-
 ### Setting Up Gremlin Visualizer
 To setup gremlin visualizer, you need to have `node.js` and `npm` installed in your system.
 
 * Clone the project
 ```sh
-git clone https://github.com/prabushitha/gremlin-visualizer.git
+git clone https://github.com/mapped/gremlin-visualizer-graph.git
 ```
 * Install dependencies
 ```sh
@@ -42,10 +43,10 @@ The Docker image can be built by calling the `docker build` command, for example
 docker build --tag=gremlin-visualizer:latest .
 ```
 
-The image can also be downloaded from Docker hub: [`prabushitha/gremlin-visualizer:latest`](https://hub.docker.com/r/prabushitha/gremlin-visualizer).
+The image can also be downloaded from Docker hub: [`mapped/gremlin-visualizer:latest`](https://hub.docker.com/r/mapped/gremlin-visualizer).
 
 ```sh
-docker pull prabushitha/gremlin-visualizer:latest
+docker pull mapped/gremlin-visualizer:latest
 ```
 
 The Docker image can then be run by calling `docker run` and exposing the necessary ports for communication. See [Docker's documentation](https://docs.docker.com/engine/reference/commandline/run/) for more options on how to run the image.
@@ -54,7 +55,7 @@ The Docker image can then be run by calling `docker run` and exposing the necess
 # if you built the image yourself
 docker run --rm -d -p 3000:3000 -p 3001:3001 --name=gremlin-visualizer --network=host gremlin-visualizer:latest
 # if you downloaded from Docker Hub
-docker run --rm -d -p 3000:3000 -p 3001:3001 --name=gremlin-visualizer --network=host prabushitha/gremlin-visualizer:latest
+docker run --rm -d -p 3000:3000 -p 3001:3001 --name=gremlin-visualizer --network=host mapped/gremlin-visualizer:latest
 ```
 Note that `--network=host` is not needed if you don't run your gremlin server in the host machine. 
 
