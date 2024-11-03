@@ -79,6 +79,13 @@ http://localhost:3001
 
 The Docker container can be stopped by calling `docker stop janusgraph-visualizer`.
 
+### Supported Environment Variables
+
+* `GREMLIN_HOST` - sets gremlin server hostname for connection. Default is `localhost`.
+* `GREMLIN_PORT` - sets gremlin server port for connection. Default is `8182`.
+* `GREMLIN_TRAVERSAL_SOURCE` - sets default graph traversal source name to be used for queries. Default is `g`.
+* `GREMLIN_DEFAULT_QUERY` - sets default query to show in visualizer. Default is `g.V()`.
+
 ### Usage
 * Start JanusGraph-Visualizer as mentioned above
 * Start or tunnel a gremlin server
