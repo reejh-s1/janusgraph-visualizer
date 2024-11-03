@@ -1,7 +1,7 @@
 {
-  "name": "gremlin-visualizer",
+  "name": "janusgraph-visualizer",
   "version": "1.0.0",
-  "author": "Umesh Jayasinghe",
+  "author": "JanusGraph Contributors",
   "description": "Visualize graph network corresponding to a gremlin query",
   "license": "MIT",
   "dependencies": {
