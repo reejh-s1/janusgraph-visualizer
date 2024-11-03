@@ -1,7 +1,7 @@
 # JanusGraph-Visualizer
 This project is to visualize the graph network corresponding to a gremlin query.
 
-![alt text](https://github.com/JanusGraph/janusgraph-visualizer/blob/master/assets/JanusGraph-Visualizer.png)
+![alt text](https://raw.githubusercontent.com/JanusGraph/janusgraph-visualizer/refs/heads/main/assets/JanusGraph-Visualizer.png)
 
 ### Setting Up JanusGraph Visualizer
 To setup JanusGraph visualizer, you need to have `node.js` and `npm` installed in your system.
