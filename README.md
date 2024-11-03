@@ -3,6 +3,21 @@ This project is to visualize the graph network corresponding to a gremlin query.
 
 ![alt text](https://raw.githubusercontent.com/JanusGraph/janusgraph-visualizer/refs/heads/main/assets/JanusGraph-Visualizer.png)
 
+### Quick start guide
+
+Below is a quick start guide to start JanusGraph, load the testing graph, and start visualization to show the graph.  
+Notice, this guide uses Docker image, but it's possible to start JanusGraph and visualization tool without (see `Setting Up JanusGraph Visualizer` section below).
+
+1. Start JanusGraph on your host machine: `docker run --name janusgraph-default -p 8182:8182 --network=host janusgraph/janusgraph:latest`
+2. Open second terminal and start gremlin console: `docker run --rm --network=host -e GREMLIN_REMOTE_HOSTS=localhost -it janusgraph/janusgraph:latest ./bin/gremlin.sh`
+3. Connect to JanusGraph Server from your running Gremlin Console: `:remote connect tinkerpop.server conf/remote.yaml`
+4. Instruct Gremlin Console to send all requests to the connected remote server: `:remote console`
+5. Load JanusGraph testing graph via Gremlin Console: `GraphOfTheGodsFactory.load(graph)`
+6. Exit Gremlin Console because it's no longer needed: `:exit`
+7. Start JanusGraph-Visualizer: `docker run --rm -d -p 3000:3000 -p 3001:3001 --name=janusgraph-visualizer --network=host janusgraph/janusgraph-visualizer:latest`
+8. Open your browser and enter address `http://localhost:3001/`
+9. Click `EXECUTE` button. You should see the same graph as the one specified on the image above.
+
 ### Setting Up JanusGraph Visualizer
 To setup JanusGraph visualizer, you need to have `node.js` and `npm` installed in your system.
 
