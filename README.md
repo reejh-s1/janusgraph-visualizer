@@ -29,7 +29,13 @@ Note - Frontend starts on port 3000 and simple Node.js server also starts on por
 
 You can build a Docker image of the JanusGraph visualizer with the included `Dockerfile`.
 This will use the current version of the `main` branch of the source GitHub repository.
-The Docker image can be built by calling the `docker build` command, for example:
+The Docker image can be built by calling the `docker build -f full.Dockerfile` command, for example:
+
+```sh
+docker build --tag=janusgraph-visualizer:latest -f full.Dockerfile .
+```
+
+If you had already built node project on your host then you can create a Docker image faster by using `Dockerfile` instead of `full.Dockerfile`: 
 
 ```sh
 docker build --tag=janusgraph-visualizer:latest .
@@ -50,6 +56,11 @@ docker run --rm -d -p 3000:3000 -p 3001:3001 --name=janusgraph-visualizer --netw
 docker run --rm -d -p 3000:3000 -p 3001:3001 --name=janusgraph-visualizer --network=host janusgraph/janusgraph-visualizer:latest
 ```
 Note that `--network=host` is not needed if you don't run your gremlin server in the host machine. 
+
+* Open the browser and navigate to
+```sh
+http://localhost:3001
+```
 
 The Docker container can be stopped by calling `docker stop janusgraph-visualizer`.
 
@@ -74,7 +85,7 @@ Author of the original Gremlin-Visualizer is: [Umesh Jayasinghe](https://github.
 1. Added suppport for different graph names
 2. Added GitHub actions to build & push Docker image
 3. Added productions mode to host in Kubernetes
-4. Added ability to override default values (graph host, port, name) via environement variables
+4. Added ability to override default values (graph host, port, name) via environment variables
 
 ## Something Missing?
 
