@@ -1,4 +1,11 @@
 # JanusGraph-Visualizer
+
+### TLDR:
+1. `npm run build`
+2. create a `.env` file in app directory set `USERNAME`, `PASSWORD`, `PROTOCOL`
+3. `npm start`
+4. http://localhost:3001
+
 This project is to visualize the graph network corresponding to a gremlin query.
 
 ![alt text](https://raw.githubusercontent.com/JanusGraph/janusgraph-visualizer/refs/heads/main/assets/JanusGraph-Visualizer.png)
