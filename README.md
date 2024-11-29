@@ -1,6 +1,7 @@
 # JanusGraph-Visualizer
 
 ### TLDR:
+0. `npm install`
 1. `npm run build`
 2. create a `.env` file in app directory set `USERNAME`, `PASSWORD`, `PROTOCOL`
 3. `npm start`
